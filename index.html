@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QrGenerator</title>
+</head>
+<body>
+    <input type="text" id='ssid' placeholder="SSID">
+    <select name="protocol" id="security_protocol">
+        <option value="">--Please choose an option--</option>
+        <option>WEP</option>
+        <option>WPA/WPA2-Personal</option>
+    </select>
+    <input type="password" placeholder="Password" id="password">
+    <button id="generate">Generate</button>
+
+    <canvas id="canvas"></canvas>
+    
+    <script src="qr.js" type="module"></script>
+</body>
+</html>
