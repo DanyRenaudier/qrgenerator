@@ -7,8 +7,6 @@ const wifi = () => {
     const password = document.getElementById("password");
     const wifi = document.getElementById("wifi");
 
-    console.log(ssid.value, security_protocol.value, password.value);
-
     [ssid.value, security_protocol.value, password.value].includes("")
       ? alert("Complete los campos!")
       : toCanvas(
