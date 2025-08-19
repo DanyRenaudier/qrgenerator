@@ -12,6 +12,7 @@ const wifi = () => {
       : toCanvas(
           wifi,
           `WIFI:T:${security_protocol.value != "WEP" ? "WPA" : "WEP"};S:${ssid.value};P:${password.value};;`,
+          (wifi.style.display = "block"),
         );
   });
 };
