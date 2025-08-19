@@ -29,19 +29,23 @@
 
     <div id="qr2" class="tab-content">
       <h3>Generar QR de URL</h3>
-      <input placeholder="https://ejemplo.com">
-      <button id="b-url">Generate</button>
-      <canvas id="url"></canvas>
+      <select name="protocol" id="url_protocol">
+        <option value="">Select protocol</option>
+        <option>WEP</option>
+        <option>WPA/WPA2/WPA3-Personal</option>
+        <input id='txt-url' placeholder="https://ejemplo.com">
+        <button id="b-url">Generate</button>
     </div>
+    <canvas id="url"></canvas>
 
     <!-- Solapa 3 -->
     <div id="qr3" class="tab-content">
       <h3>Generar QR de WiFi</h3>
       <input type="text" id='ssid' placeholder="SSID">
       <select name="protocol" id="security_protocol">
-        <option value="">--Please choose an option--</option>
-        <option>WEP</option>
-        <option>WPA/WPA2/WPA3-Personal</option>
+        <option value="">Please choose an option</option>
+        <option value="WEP">WEP</option>
+        <option value="WPA">WPA/WPA2/WPA3-Personal</option>
       </select>
       <input type="password" placeholder="Password" id="password">
       <button id="b-wifi">Generate</button>
