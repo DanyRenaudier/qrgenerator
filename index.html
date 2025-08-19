@@ -1,22 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QrGenerator</title>
+  <meta charset="UTF-8">
+  <title>Generador de Códigos QR</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <input type="text" id='ssid' placeholder="SSID">
-    <select name="protocol" id="security_protocol">
+
+  <h2>Generador de QR</h2>
+  <div class="tabs">
+    <div class="tab active" data-target="qr1">QR 1</div>
+    <div class="tab" data-target="qr2">QR 2</div>
+    <div class="tab" data-target="qr3">QR 3</div>
+  </div>
+
+  <div class="content">
+    <!-- Solapa 1 -->
+    <div id="qr1" class="tab-content active">
+      <h3>Generar QR de Texto</h3>
+      <form action="/api/qr1" method="POST">
+        <input type="text" name="texto" placeholder="Escribí tu texto">
+        <button type="submit">Generar</button>
+      </form>
+    </div>
+
+    <!-- Solapa 2 -->
+    <div id="qr2" class="tab-content">
+      <h3>Generar QR de URL</h3>
+      <form action="/api/qr2" method="POST">
+        <input type="url" name="url" placeholder="https://ejemplo.com">
+        <button type="submit">Generar</button>
+      </form>
+    </div>
+
+    <!-- Solapa 3 -->
+    <div id="qr3" class="tab-content">
+      <h3>Generar QR de WiFi</h3>
+      <input type="text" id='ssid' placeholder="SSID">
+      <select name="protocol" id="security_protocol">
         <option value="">--Please choose an option--</option>
         <option>WEP</option>
         <option>WPA/WPA2-Personal</option>
-    </select>
-    <input type="password" placeholder="Password" id="password">
-    <button id="generate">Generate</button>
+      </select>
+      <input type="password" placeholder="Password" id="password">
+      <button id="generate">Generate</button>
 
+    </div>
     <canvas id="canvas"></canvas>
-    
-    <script src="qr.js" type="module"></script>
+  </div>
+
+  <script src="tabs.js"></script>
+  <script type="module" src="qr.js"></script>
 </body>
+
 </html>
