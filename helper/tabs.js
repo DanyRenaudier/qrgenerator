@@ -1,7 +1,8 @@
 const tabFormat = () => {
   const tabs = document.querySelectorAll(".tab");
   const contents = document.querySelectorAll(".tab-content");
-  const canvas = document.querySelector("canvas");
+  const canvas = document.querySelectorAll("canvas");
+  console.log(canvas);
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
@@ -11,7 +12,9 @@ const tabFormat = () => {
 
       tab.classList.add("active");
       document.getElementById(tab.dataset.target).classList.add("active");
-      canvas.width = canvas.width; //clean canvas
+      canvas.forEach((canvas) => {
+        canvas.width = canvas.width;
+      });
     });
   });
 };
