@@ -11,28 +11,27 @@
 
   <h2>Generador de QR</h2>
   <div class="tabs">
-    <div class="tab active" data-target="qr1">QR 1</div>
-    <div class="tab" data-target="qr2">QR 2</div>
-    <div class="tab" data-target="qr3">QR 3</div>
+    <div class="tab active" data-target="qr1">TEXTO</div>
+    <div class="tab" data-target="qr2">URL</div>
+    <div class="tab" data-target="qr3">WiFi</div>
   </div>
 
   <div class="content">
     <!-- Solapa 1 -->
     <div id="qr1" class="tab-content active">
       <h3>Generar QR de Texto</h3>
-      <form action="/api/qr1" method="POST">
-        <input type="text" name="texto" placeholder="Escribí tu texto">
-        <button type="submit">Generar</button>
-      </form>
+      <input type="text" name="texto" placeholder="Escribí tu texto">
+      <!-- <button id="generate">Generate</button>
+      <canvas id="canvas"></canvas> -->
     </div>
 
     <!-- Solapa 2 -->
+
     <div id="qr2" class="tab-content">
       <h3>Generar QR de URL</h3>
-      <form action="/api/qr2" method="POST">
-        <input type="url" name="url" placeholder="https://ejemplo.com">
-        <button type="submit">Generar</button>
-      </form>
+      <input placeholder="https://ejemplo.com">
+      <!-- <button id="generate">Generate</button>
+      <canvas id="url"></canvas> -->
     </div>
 
     <!-- Solapa 3 -->
@@ -42,17 +41,18 @@
       <select name="protocol" id="security_protocol">
         <option value="">--Please choose an option--</option>
         <option>WEP</option>
-        <option>WPA/WPA2-Personal</option>
+        <option>WPA/WPA2/WPA3-Personal</option>
       </select>
       <input type="password" placeholder="Password" id="password">
       <button id="generate">Generate</button>
-
     </div>
-    <canvas id="canvas"></canvas>
+
+    <canvas id="wifi"></canvas>
+
   </div>
 
-  <script src="tabs.js"></script>
-  <script type="module" src="qr.js"></script>
+  <script type="module" src="./index.js"></script>
+
 </body>
 
 </html>
