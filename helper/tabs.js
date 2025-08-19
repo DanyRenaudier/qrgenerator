@@ -2,7 +2,6 @@ const tabFormat = () => {
   const tabs = document.querySelectorAll(".tab");
   const contents = document.querySelectorAll(".tab-content");
   const canvas = document.querySelectorAll("canvas");
-  console.log(canvas);
 
   tabs.forEach((tab) => {
     tab.addEventListener("click", () => {
