@@ -2,20 +2,28 @@ import { toCanvas } from "./qrgenerator";
 
 class WIFI {
   constructor() {
-    this.wifi();
+    this.ssid = document.getElementById("ssid");
+    this.security_protocol = document.getElementById("security_protocol");
+    this.password = document.getElementById("password");
+    this.wifi = document.getElementById("wifi");
+    this.btn = document.getElementById("b-wifi");
+    this.eye = document.getElementById("eye");
+
+    //methods
+    this.init();
+  }
+
+  init() {
+    this.validation();
     this.hidePassword();
   }
 
-  wifi() {
-    const ssid = document.getElementById("ssid");
-    const security_protocol = document.getElementById("security_protocol");
-    const password = document.getElementById("password");
-    const wifi = document.getElementById("wifi");
-    document.getElementById("b-wifi").addEventListener("click", () => {
+  validation() {
+    this.btn.addEventListener("click", () => {
       [ssid.value, security_protocol.value, password.value].includes("")
         ? alert("Complete todos los campos")
         : toCanvas(
-            wifi,
+            this.wifi,
             `WIFI:T:${security_protocol.value != "WEP" ? "WPA" : "WEP"};S:${ssid.value};P:${password.value};;`,
             (wifi.style.display = "block"),
           );
@@ -23,13 +31,11 @@ class WIFI {
   }
 
   hidePassword() {
-    const eye = document.getElementById("eye");
-
-    eye.addEventListener("mouseover", () => {
-      password.type = password.type === "password" ? "text" : "password";
+    this.eye.addEventListener("mouseover", () => {
+      password.type = "text";
     });
-    eye.addEventListener("mouseleave", () => {
-      password.type = password.type === "text" ? "password" : "text";
+    this.eye.addEventListener("mouseleave", () => {
+      password.type = "password";
     });
   }
 }
