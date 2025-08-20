@@ -32,3 +32,17 @@ body {
 .tab-content.active {
   display: block;
 }
+
+#eye {
+  position: absolute;
+  top: 10px;
+  right: 2px;
+  transform: translateY(-50%);
+  color: #7b7b63;
+  cursor: pointer;
+}
+
+#pwd {
+  position: relative;
+  display: inline-block;
+}
